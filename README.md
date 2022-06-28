@@ -1,1 +1,1 @@
-i am working now
+Shell, init files, variables and expansions
