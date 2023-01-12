@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# set up web server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+mkdir -p /var/www/html
+sudo service nginx start
+echo "Hello World!" > /var/www/html/index.html
