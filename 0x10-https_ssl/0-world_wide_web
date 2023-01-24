@@ -6,7 +6,7 @@ printstuff () {
 
 	if [ $IP ]
 	then
-		echo "The subdomain [SUB_DOMAIN] is a [RECORD_TYPE] record and points to [DESTINATION]"
+		echo "The subdomain $1 is a $TYPE record and points to $IP"
 	fi
 }
 
