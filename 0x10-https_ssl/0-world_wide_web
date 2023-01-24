@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Takes domain and subdomain and prints 'The subdomain [] is a [] record and points to []'
+printstuff () {
+	TYPE=$(dig "$1.$2" | awk '/ANSWER S/{getline; print $4}')
+	IP=$(dig "$1.$2" | awk '/ANSWER S/{getline; print $5}')
+
+	if [ $IP ]
+	then
+		echo "The subdomain $1 is a $TYPE record and points to $IP"
+	fi
+}
+
+if [ $# -lt 2 ]
+then
+	SUB='www'
+	printstuff "$SUB" "$1"
+	SUB='lb-01'
+	printstuff "$SUB" "$1"
+	SUB='web-01'
+	printstuff "$SUB" "$1"
+	SUB='web-02'
+	printstuff "$SUB" "$1"
+else
+	SUB="$2"
+	printstuff "$SUB" "$1"
+fi
