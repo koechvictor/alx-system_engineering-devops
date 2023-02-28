@@ -3,6 +3,7 @@
 import requests as r
 from sys import argv
 
+
 def top_ten(subreddit):
     """
     queries the Reddit API and prints the titles of the first 10 hot posts
