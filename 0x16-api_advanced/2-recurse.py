@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Return the number of subscribers to a subreddit"""
-import requests as r
+import requests
 from sys import argv
 
 
