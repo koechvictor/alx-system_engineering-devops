@@ -17,4 +17,17 @@ def count_words(subreddit, word_list, histogram=[], n=0, after=None):
             'Safari/537.36',
             'Edg/97.0.1072.62'
         ])
-    }  
+    sort = 'hot'
+    limit = 30
+    res = requests.get(
+        '{}/r/{}/.json?sort={}&limit={}&count={}&after={}'.format(
+            'https://www.reddit.com',
+            subreddit,
+            sort,
+            limit,
+            n,
+            after if after else ''
+        ),
+        headers=api_headers,
+        allow_redirects=False
+    )}  
