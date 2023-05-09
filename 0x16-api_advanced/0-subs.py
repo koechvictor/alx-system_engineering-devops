@@ -2,6 +2,7 @@
 """Return the number of subscribers to a subreddit"""
 import requests
 
+
 BASE_URL = 'https://www.reddit.com'
 '''Reddit's base API URL.
 '''
@@ -27,4 +28,4 @@ def number_of_subscribers(subreddit):
     )
     if res.status_code == 200:
         return res.json()['data']['subscribers']
-    return 0            return 0
+    return 0
